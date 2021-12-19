@@ -1,0 +1,30 @@
+server:
+  port: 8081
+
+  # Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/eshopdb?useSSL=false&serverTimezone=UTC
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  # Hibernate Property
+  jpa:
+    hibernate:
+      # Hibernate ddl auto (create, create-drop, validate, update)
+      ddl-auto: update
+      show-sql: true
+      #The SQL dialect makes Hibernate generate better SQL for the chosen database
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# API document (Swagger)
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+
